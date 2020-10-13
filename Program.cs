@@ -17,10 +17,11 @@ namespace branching_drill
             if (wei >= 50)
             {
                 Console.WriteLine("Package is to heavy to be shipped");
+                Console.ReadLine();
                 return;
             }
 
-            else if (wei < 50)
+            else 
             {
                 Console.WriteLine("Weight Accepted");
             }
@@ -31,7 +32,7 @@ namespace branching_drill
             int wid = Convert.ToInt32(Console.ReadLine());
             Console.WriteLine("Please enter the package length.");
             int len = Convert.ToInt32(Console.ReadLine());
-            int Dim = hei * len * wid;
+            int Dim = hei + len + wid;
             if (Dim >= 50)
 
             {
@@ -41,14 +42,16 @@ namespace branching_drill
 
             }
 
-            else if (Dim < 50)
+            else  
 
             {
                 Console.WriteLine("Dimensions Accepted!");
 
             }
 
-            int total = Dim * wei / 100;
+            int totalDim = hei * wid * len;
+
+            int total = totalDim * wei / 100;
             Console.WriteLine("Your estimated total for shipping this package is:  $" + total);
             Console.ReadLine();
 
